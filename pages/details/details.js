@@ -7,8 +7,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    bookId:""
-  
+    bookId:"",
+    bookData:{},
+    isLoading:false
   },
 
   /**
@@ -21,12 +22,27 @@ Page({
     this.getDate();
   },
   getDate(){
+     this.setData({
+        isLoading:true
+     })
     fetch.get(`/book/${this.data.bookId}`).then(res=>{
-      console.log(res)
+      this.setData({
+      isLoading: false,
+        bookData:res
+      })
+    }).catch(err=>{
+       this.setData({
+          isLoading:true
+       })
     })
   },
+   toCatalog(event) {
+      wx.navigateTo({
+         url: `/pages/catalog/catalog?id=${this.data.bookId}`,
+      })
+   },
 
-  /**
+  /**          
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {

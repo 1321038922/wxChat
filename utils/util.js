@@ -1,4 +1,4 @@
-const baseUrl = "https://m.yaojunrong.com"
+const baseUrl = "http://m.yaojunrong.com"
 
 const fetch = {
   http(url, method, data) {
