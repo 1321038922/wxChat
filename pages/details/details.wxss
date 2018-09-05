@@ -85,6 +85,7 @@
 .catalogs{
    font-size: 12px;
    color: #444;
+   
 }
 
 .update-time {
@@ -99,7 +100,8 @@
 }
 .btn-wrap-b button{
    background-color: #409fff;
-   height: 60rpx;
+   height: 80rpx;
+   line-height: 80rpx;
    font-size: 12px;
    color: white;
 }

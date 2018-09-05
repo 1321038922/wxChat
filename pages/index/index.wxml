@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class='container index'>
 <image src='/static/img/loading.svg' class='loading' wx:if="{{isLoading}}"></image>
-   <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+   <swiper  wx:else indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
       <block wx:for="{{swiperData}}" wx:key="{{index}}">
          <swiper-item bindtap="jumpBook" data-id="{{item.book._id}}">
             <image src="{{item.img}}" class="slide-image" />

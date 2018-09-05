@@ -29,6 +29,7 @@ Page({
   },
   getContent(){
     fetch.get('/category/books').then(res=>{
+       console.log(res)
       this.setData({
         mainContent: res.data,
         isLoading:false

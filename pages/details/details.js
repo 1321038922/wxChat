@@ -32,7 +32,7 @@ Page({
       })
     }).catch(err=>{
        this.setData({
-          isLoading:true
+          isLoading:false
        })
     })
   },

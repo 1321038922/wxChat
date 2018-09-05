@@ -1,17 +1,9 @@
 /* pages/book/book.wxss */
 
-/**基础风格样式**/
-@import '/towxml/style/main.wxss';
+
 @import '/static/iconfont/iconfont.wxss';
 
 
-/**如果页面有动态主题切换，则需要将使用到的样式全部引入**/
-
-/**主题配色（浅色样式）**/
-@import '/towxml/style/theme/light.wxss';
-
-/**主题配色（深色样式）**/
-@import '/towxml/style/theme/dark.wxss';
 
 .book .menu{
    position: fixed;
@@ -26,6 +18,11 @@
    border-top: 1px solid #f1f1f1;
    z-index: 998;
 }
+.wemark-wrap {
+  padding: 0 20rpx;
+  padding-bottom: 100rpx;
+}
+
 .menu .iconfont{
    flex: 1;
    text-align: center;
@@ -44,8 +41,13 @@
    background: #fff;
    border: 1px solid #f1f1f1;
    z-index: 996;
+   transform: translate3d(-100%,0 ,0);
+   transition: transform .3s ease;
 }
 
+.active {
+   transform: translate3d(0, 0, 0)
+}
 .catalog-menu .catalog-item {
    font-size:14px;
    color: #333;

@@ -1,21 +1,23 @@
 <!--pages/book/book.wxml-->
-<import src="/towxml/entry.wxml" />
-<image src='/static/img/loading.svg' class='loading' wx:if="{{isLoading}}"></image>
+
 <view class='book'>
-   <view>
-      <template is="entry" data="{{...article}}" />
+<image src='/static/img/loading.svg' class='loading' wx:if="{{isLoading}}"></image>
+   <view class='wemark-wrap' wx:else style="{{'font-size:'+ font + 'rpx'}}">
+       <wemark md="{{article}}" highlight type="rich-text"></wemark>
    </view>
+
    <!-- 隐藏的目录 -->
-   <scroll-view class='catalog-menu'  wx:if="{{isShow}}" scroll-y>
-      <view class='catalog-item' wx:for="{{catalog}}"  wx:key="{{index}}" bindtap='handleGet' data-id='{{item._id}}'>{{item.title}}</view>
+   <scroll-view class="catalog-menu {{isShow? 'active': ''}}"  scroll-y>
+      <view class='catalog-item' wx:for="{{catalog}}"  wx:key="{{index}}" bindtap='handleGet' data-id='{{item._id}}'>{{item.title}}
+      </view>
    </scroll-view>
    <view class='mask' wx:if="{{isShow}}" bindtap='toggleCatalog'>
    </view>
-   <view class='menu'>
-      <view class='iconfont icon icon-ziyuan' bindtap='backMenu'></view>
+   <view class='menu' hidden='!isLoading'>
+      <view class='iconfont icon icon-ziyuan' bindtap='handlePrev'></view>
       <view class='iconfont icon-mulu' bindtap='toggleCatalog'></view>
-      <view class='iconfont icon-font-up'></view>
-      <view class='iconfont icon-zitisuoxiao'></view>
-      <view class='iconfont icon-next'></view>
+      <view class='iconfont icon-zitifangda'bindtap='fontUp'></view>
+      <view class='iconfont icon-zitisuoxiao' bindtap='fontDown'></view>
+      <view class='iconfont icon-next' bindtap='handleNext'></view>
    </view>
 </view>

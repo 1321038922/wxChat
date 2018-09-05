@@ -12,10 +12,9 @@ Page({
      bookId:"",
      catalog:[],
      isShow:false,
-     bookId:"",
-     catalog:[],
-     isShow:false,
      isLoading:false,
+     font:40,
+     index:""
   },
 
   /**
@@ -32,19 +31,20 @@ Page({
   },
   getData(){
      this.setData({
-        isLoading:true
+        isLoading:true,
+        isShow:false
      })
      fetch.get(`/article/${this.data.titleId}`).then(res=>{
-        let data = app.towxml.toJson(res.data.article.content, 'markdown');
         console.log(res)
         this.setData({
            isLoading:false,
-           article:data,
-           title:res.data.title
+           article: res.data.article.content,
+           title:res.data.title,
+           index:res.data.article.index
         })
      }).catch(err => {
         setData({
-           isLoading: true
+           isLoading: false
         })
      })
   },
@@ -71,54 +71,57 @@ handleGet(event){
    })
    this.getData()
 },
-   backMenu(){
-      wx.navigateBack({
-         delta: 1
+// 上一张
+handlePrev(){
+   let catalog =this.data.catalog
+   if(this.data.index -1 < 0){
+      wx.showToast({
+         title: '别翻了，到头了',
       })
-   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
+   }else {
+      this.setData({
+         titleId:catalog[this.data.index -1]._id
+      })
+      this.getData()
+   }
+},
+handleNext(){
+   let catalog = this.data.catalog
+   if(catalog[this.data.index + 1]){
+      this.setData({
+         titleId:catalog[this.data.index +1]._id
+      })
+      this.getData()
+   }else{
+      wx.showToast({
+         title: '没有了',
+      })
+   }
+},
+fontUp(){
+   if (this.data.font >= 56){
+      wx.showToast({
+         title: '已经最大了',
+      })    
+   }else{
+      this.setData({
+         font: this.data.font + 2
+      })
+   }
+},
+fontDown(){
+   if (this.data.font <= 28){
+      wx.showModal({
+         title: "提示",
+         content: "字体太小影响视力哦",
+         showCancel: false
+      })
+   }else{
+      this.setData({
+         font: this.data.font - 2
+      })
+   }
+},
   /**
    * 用户点击右上角分享
    */
