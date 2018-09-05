@@ -32,7 +32,7 @@ Page({
        console.log(res)
       this.setData({
         mainContent: res.data,
-        isLoading:false
+        isLoading:false,
       })
     }).catch(err=>{
        this.setData({

@@ -32,16 +32,17 @@
 }
 
 .box-r{
-  padding-bottom: 20rpx;
+  padding-bottom: 10rpx;
   margin-left: 30rpx;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 .box-r .book-desc{
+  padding-top: 15rpx;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 4;
   overflow: hidden;
   color: #444;
   font-size: 14px;
@@ -49,7 +50,8 @@
 }
 
 .box-r .author{
-  display: flex;
-  justify-content: space-between;
+   display: flex;
+  height: 20rpx;
   font-size: 12px;
+  justify-content: space-between;
 }
