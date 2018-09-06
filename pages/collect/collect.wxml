@@ -1,0 +1,30 @@
+<!--pages/collect/collect.wxml-->
+<view class='container'>
+   <view class='img' wx:for="{{bookReadList}}" wx:key="{{index}}">
+      <image src='{{item.book.img}}'></image>
+   </view>
+   <view class='book-main' wx:for="{{bookReadList}}" wx:key="{{index}}">
+      <view class='book-title'>
+         <text>
+              {{item.book.title}}
+         </text>
+      </view>
+      <view class='read-rate'>
+         <text>
+               第{{item.title.index}}/{{item.title.total}}章节
+         </text>
+      </view>
+      <view class='read-details'>
+         <progress percent="{{(item.title.index/item.title.total)*100}}"></progress>
+         <text>已看{{(item.title.index/item.title.total)*100}}%</text>
+         <view>
+            <text>上次查看</text>
+            <text>11小时前</text>
+         </view>
+      </view>
+      <view class='bottom-btn'>
+         <button class='btn-l'>继续阅读</button>
+         <button class='btn-r'>查看详情</button>
+      </view>
+   </view>
+</view>

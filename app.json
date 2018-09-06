@@ -3,12 +3,41 @@
       "pages/index/index",
       "pages/details/details",
       "pages/catalog/catalog",
-      "pages/book/book"
+      "pages/book/book",
+      "pages/collect/collect",
+      "pages/personal/personal"
    ],
    "window": {
       "backgroundTextStyle": "light",
       "navigationBarBackgroundColor": "#fff",
       "navigationBarTitleText": "悦读",
       "navigationBarTextStyle": "black"
+   },
+   "tabBar": {
+      "list": [
+         {
+            "pagePath": "pages/index/index",
+            "text": "首页",
+            "iconPath": "/static/tabbar/main.png",
+            "selectedIconPath": "/static/tabbar/selectedmain.png"
+            
+         },
+         {
+            "pagePath": "pages/collect/collect",
+            "text": "我的收藏",
+            "iconPath": "/static/tabbar/book.png",
+            "selectedIconPath": "/static/tabbar/selectedbook.png"
+            
+         },
+         {
+            "pagePath": "pages/personal/personal",
+            "text": "个人中心",
+            "iconPath": "/static/tabbar/personal.png",
+            "selectedIconPath": "/static/tabbar/selectedpersonal.png"
+         }
+      ],
+      "borderStyle":"white",
+      "selectedColor": "#1296db",
+      "color": "#8a8a8a"
    }
 }
