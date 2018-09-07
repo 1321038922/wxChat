@@ -1,2 +1,27 @@
 <!--pages/personal/personal.wxml-->
-<text>pages/personal/personal.wxml</text>
+<view class='container'>
+   <view class='user-top'>
+      <view class='head-portrait'>
+         <open-data  type="userAvatarUrl"></open-data>
+      </view>
+      <view class='userInfo'>
+         <view>
+            <open-data type="userNickName"></open-data>
+         </view>
+         <view class='signature'>别点了，这儿写不了签名</view>
+      </view>
+   </view>
+   <view class='userInfo-btn'>
+      <view class='btn-l btn' bindtap='handlecollect'>
+         <view> {{collectNum}}</view>
+         <view>收藏</view>
+      </view>
+      <view class='btn-r btn'>
+         <view>{{Readnum}}</view>
+         <view>已阅读</view>
+      </view>
+   </view>
+   <view>
+      <image></image>
+   </view>
+</view>

@@ -19,6 +19,7 @@ Page({
       loadDown: false
    },
    onLoad() {
+      login()
       Promise.all([this.getData(), this.getContent()]).then(() => {
          this.setData({
             loadDown: true,
@@ -49,8 +50,9 @@ Page({
    getContent() {
       return new Promise((resolve, reject) => {
          fetch.get('/category/books').then(res => {
+            let time = +new Date();
+            console.log (time )
             resolve()
-            console.log(res)
             this.setData({
                mainContent: res.data,
                isLoading: false,
@@ -77,6 +79,7 @@ Page({
       })
    },
    jumpBook(event) {
+      console.log(event)
       const id = event.currentTarget.dataset.id
       wx.navigateTo({
          url: `/pages/details/details?id=${id}`,

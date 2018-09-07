@@ -1,1 +1,110 @@
 /* pages/collect/collect.wxss */
+
+.container {
+   padding: 20rpx 20rpx 40rpx 20rpx;
+}
+
+.container .img image {
+   box-shadow: 0 0 4px 4px #909090;
+   width: 220rpx;
+   height: 280rpx;
+}
+
+.container .img {
+   padding-bottom: 40rpx;
+   font-size: 12px;
+   display: flex;
+   justify-content: space-between;
+}
+.book-main {
+   margin-left: 20rpx;
+}
+.book-main .book-title{
+   font-size: 14px;
+}
+.book-main .read-rate {
+   font-size: 12px;
+   padding-top: 20rpx;
+}
+
+.book-main .read-details {
+   display: flex;
+   justify-content: space-between;
+}
+.read-details .progress-rate{
+   margin-left: 60rpx;
+}
+.read-details .progress{
+   height: 2rpx;
+   margin-top: 20rpx;
+   width: 300rpx;
+}
+.book-main .details-text{
+   font-size: 10px;
+   margin-top: 20rpx;
+    display: flex;
+   justify-content: space-between;
+}
+.details-text .text-l{
+   margin-right: 30rpx;
+   width: 340rpx;
+}
+.book-main .bottom-btn {
+   display: flex;
+   justify-content: space-between;
+   margin-top: 30rpx;
+}
+.book-main .bottom-btn button{
+   font-size: 14px;
+   line-height: 70rpx;
+   width: 200rpx;
+   height: 70rpx;
+}
+.loading-more {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 120rpx;
+   margin-top: 40rpx;
+   font-size: 14px;
+}
+
+.loading-more .loadmore {
+   width: 70rpx;
+   height: 70rpx;
+}
+
+.loading-more text {
+   line-height: 50rpx;
+   height: 50rpx;
+   margin-left: 20rpx;
+}
+
+.no-more {
+   position: relative;
+   text-align: center;
+   height: 80rpx;
+   line-height: 80rpx;
+   margin-top: 30rpx;
+   background: #f1f1f1;
+   color: #888;
+}
+
+.no-more-text {
+   background: #f1f1f1;
+   padding: 0 20rpx;
+   position: relative;
+   z-index: 998;
+   font-size: 14px;
+}
+
+.line {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate3d(-50%, -50%);
+   width: 500rpx;
+   height: 1rpx;
+   background: #e9e9e9;
+   z-index: 0;
+}

@@ -32,6 +32,9 @@ const fetch = {
    get(url, data) {
       return this.http(url, 'GET', data)
    },
+   delete(url, data) {
+      return this.http(url, 'DELETE', data)
+   },
    post(url, data) {
       return this.http(url, 'POST', data)
    }

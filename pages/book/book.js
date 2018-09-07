@@ -6,7 +6,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-
      titeId:"",
      article:{},
      title:"",
@@ -65,7 +64,6 @@ toggleCatalog(){
 },
 handleGet(event){
    const id = event.currentTarget.dataset.id
-   console.log(id)
    this.setData({
       titleId:id,
       isShow:false

@@ -24,6 +24,7 @@
 }
 
 .content .box-l .img {
+   box-shadow: 0 0 4px 4px #909090;
    width: 230rpx;
    height: 300rpx;
 }

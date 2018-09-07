@@ -10,7 +10,7 @@
             </view>
             <view class='author-name'>
                作者：{{bookData.data.author}}
-            </view>
+            </view> 
             <view class='looknumbers'>
                {{bookData.data.looknums}}人在看
             </view>

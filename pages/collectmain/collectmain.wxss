@@ -1,0 +1,60 @@
+/* pages/collectmain/collectmain.wxss */
+
+page{
+   width: 670rpx;
+  height: 1206rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+   background-color: #f9f9f9;
+}
+.container{
+  padding: 20rpx 40rpx;
+  width: 670rpx;
+  display: flex;
+  flex-wrap: wrap;
+ 
+}
+.item{
+   position: relative;
+  display: flex;
+  flex-direction: column;
+   width: 50%;
+   height: 360rpx;
+   align-items: center;
+   margin: 30rpx 0rpx;
+}
+.item image{
+  width: 200rpx;
+  height: 250rpx;   
+  box-shadow: 0 0 4px 4px #909090;
+}
+.item text{
+   width: 240rpx;
+   margin-top: 20rpx;
+  font-size: 12px;
+
+}
+.item .delete{
+   position: absolute;
+   width: 48rpx;
+   height: 48rpx;
+   top:-40rpx;
+   right:260rpx;
+   border-radius: 50%;
+   
+}
+/* 我是有底线的 */
+.baseLine{
+  height: 40rpx;
+  width: 750rpx;
+  display: flex;
+}
+.baseLine text{
+  position: fixed;
+  width: 100%;
+  font-size: 12px;
+  color: #555;
+  text-align: center;
+
+}

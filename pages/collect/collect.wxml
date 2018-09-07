@@ -1,30 +1,43 @@
 <!--pages/collect/collect.wxml-->
 <view class='container'>
    <view class='img' wx:for="{{bookReadList}}" wx:key="{{index}}">
-      <image src='{{item.book.img}}'></image>
-   </view>
-   <view class='book-main' wx:for="{{bookReadList}}" wx:key="{{index}}">
-      <view class='book-title'>
-         <text>
-              {{item.book.title}}
-         </text>
-      </view>
-      <view class='read-rate'>
-         <text>
-               第{{item.title.index}}/{{item.title.total}}章节
-         </text>
-      </view>
-      <view class='read-details'>
-         <progress percent="{{(item.title.index/item.title.total)*100}}"></progress>
-         <text>已看{{(item.title.index/item.title.total)*100}}%</text>
-         <view>
-            <text>上次查看</text>
-            <text>11小时前</text>
+      <image src='{{item.book.img}}'>
+      </image>
+      <view class='book-main'>
+         <view class='book-title'>
+            {{item.book.title}}
+         </view>
+         <view class='read-rate'>
+            第{{item.title.index}}/{{item.title.total}}章节
+         </view>
+         <view class='read-details'>
+            <progress class='progress' percent="{{(item.title.index/item.title.total)*100}}"></progress>
+            <view class='progress-rate'>
+               {{item.title.percent}}%
+            </view>
+         </view>
+         <view class='details-text'>
+            <view class='text-l'>
+               上次看到:{{item.title.title}}
+            </view>
+            <view>11小时前</view>
+         </view>
+         <view class='bottom-btn'>
+         <navigator url="{{'/pages/book/book?id='+ item.title._id + '&bookId='+ item.book._id}}">
+            <button class='btn-l'  >继续阅读</button>
+         </navigator>
+            <button class='btn-r' bindtap='handleMain' data-id="{{item.book._id}}">查看详情</button>
          </view>
       </view>
-      <view class='bottom-btn'>
-         <button class='btn-l'>继续阅读</button>
-         <button class='btn-r'>查看详情</button>
+   </view>
+    <view >
+      <view class='loading-more' wx:if="{{hasMore}}">
+         <image src='/static/img/loadMore.svg' class='loadmore'></image>
+         <text>正在拼命加载中</text>
+      </view>
+      <view class='no-more' wx:else>
+         <text class='no-more-text'>臣妾做不到啊</text>
+         <text class='line'></text>
       </view>
    </view>
 </view>

@@ -1,0 +1,13 @@
+<!--pages/collectmain/collectmain.wxml-->
+<view class='container'>
+   <view class='item' wx:for='{{book}}' wx:key="{{index}}" >
+      <image class='delete' src='../../static/img/delete.svg' bindtap="toBook" wx:if='{{isShow}}' data-id='{{item.book._id}}'></image>
+      <image src='{{item.book.img}}' bindlongpress='deletebook'></image>
+      <text> {{item.book.title}}</text>
+   </view>
+   <!-- 我是有底线的 -->
+   <view class='baseLine'>
+      <text>已经全部加载</text>
+   </view>
+   <!-- 我是有底线的 -->
+</view>

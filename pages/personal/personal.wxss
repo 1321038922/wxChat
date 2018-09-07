@@ -1,1 +1,49 @@
 /* pages/personal/personal.wxss */
+
+.container{
+    margin: 0;
+   padding: 0;
+}
+.container .user-top {
+   display: flex;
+   justify-content: space-between;
+   height: 160rpx;
+   background: #1296db;
+   border-bottom: 1rpx solid #989898;
+}
+.head-portrait {
+   margin-left: 20rpx;
+  overflow:hidden;
+  display: block;
+  width: 132rpx;
+  height: 132rpx;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.user-top .userInfo {
+   width: 600rpx;
+   margin-left: 20rpx;
+   height: 120rpx;
+}
+
+.userInfo .signature {
+   font-size: 14px;
+   padding-top: 30rpx;
+}
+
+.container .userInfo-btn {
+   display: flex;
+   justify-content: space-between;
+   background: #1296db;
+}
+.userInfo-btn .btn{
+   font-size: 16px;
+   text-align: center;
+   width: 50%;
+   height: 120rpx;
+   padding-top: 10rpx;
+
+}

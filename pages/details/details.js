@@ -29,7 +29,6 @@ Page({
          isLoading: true
       })
       fetch.get(`/book/${this.data.bookId}`).then(res => {
-
          this.setData({
             isLoading: false,
             bookData: res
@@ -56,7 +55,7 @@ Page({
         }
       })
    },
-   toCatalog(event) {
+   toCatalog() {
       wx.navigateTo({
          url: `/pages/catalog/catalog?id=${this.data.bookId}`,
       })

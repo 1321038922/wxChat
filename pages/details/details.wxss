@@ -13,7 +13,7 @@
 .book-t .img {
   width: 220rpx;
   height: 280rpx;
-}
+} 
 .book-t .main-msg {
    margin-left: 40rpx;
    display: flex;
